@@ -10,7 +10,7 @@
 // const icons
 #let linkedin-icon = box(fa-icon("linkedin", fa-set: "Brands", fill: color-darknight))
 #let github-icon = box(fa-icon("github", fa-set: "Brands", fill: color-darknight))
-#let phone-icon = fa-phone()
+#let phone-icon = box(fa-phone(fill: color-darknight))
 #let email-icon = box(fa-icon("at", fill: color-darknight))
 
 /// Helpers
@@ -129,6 +129,7 @@
     lang: "en",
     size: 8pt,
     fill: color-darkgray,
+    hyphenate: false,
     fallback: true
   )
 
@@ -236,7 +237,7 @@
         #align(horizon)[
           #phone-icon
           // #box[#text(author.phone)]
-          #box[#link("tel:"+author.phone)]
+          #box[#link("tel:"+author.phone)[#author.phone]]
           #separator
           #email-icon
           #box[#link("mailto:" + author.email)[#author.email]]
@@ -313,7 +314,7 @@
   pad[
     #grid(
       columns: (25fr, 70fr),
-      gutter: 10pt,
+      gutter: 15pt,
       align(right)[
         #set text(hyphenate: false)
         == #category

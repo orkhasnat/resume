@@ -17,7 +17,7 @@
 )
 
 = About Me
-I'm a final semester undergraduate student with a keen interest in open-source projects. I actively seek out opportunities to learn and grow, especially within collaborative team environments where I can contribute to technological innovations. Adept at bug hunting and vulnerability detection, I excel at performing under tight deadlines and pressure.
+I'm a final semester undergraduate student with a keen interest in open-source projects. I actively seek out opportunities to learn and grow, specially within collaborative team environments where I can contribute to technological innovations. Adept at bug hunting and vulnerability detection, I excel at performing under tight deadlines and pressure.
 = Education
 
 #resume-entry(
