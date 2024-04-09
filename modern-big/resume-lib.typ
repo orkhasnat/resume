@@ -189,9 +189,6 @@
   body
 }
 
-/// The base item for resume entries. 
-/// This formats the item for the resume entries. Typically your body would be a bullet list of items. Could be your responsibilities at a company or your academic achievements in an educational background section.
-/// - body (content): The body of the resume entry
 #let resume-item(body) = {
   set text(size: 8pt, style: "normal", weight: "light")
   set par(leading: 0.65em)
@@ -199,11 +196,6 @@
   body
 }
 
-/// The base item for resume entries. This formats the item for the resume entries. Typically your body would be a bullet list of items. Could be your responsibilities at a company or your academic achievements in an educational background section.
-/// - title (string): The title of the resume entry
-/// - location (string): The location of the resume entry
-/// - date (string): The date of the resume entry, this can be a range (e.g. "Jan 2020 - Dec 2020")
-/// - description (content): The body of the resume entry
 #let resume-entry(
   title: none, 
   location: "", 
@@ -216,26 +208,6 @@
   ]
 }
 
-/// Show cumulative GPA.
-/// *Example:*
-/// #example(`resume.resume-gpa("3.5", "4.0")`)
-#let resume-gpa(numerator, denominator) = {
-  set text(size: 12pt, style: "italic", weight: "light")
-  text[Cumulative GPA: #box[#strong[#numerator] / #denominator]]
-}
-
-/// Show a certification in the resume.
-/// *Example:*
-/// #example(`resume.resume-certification("AWS Certified Solutions Architect - Associate", "Jan 2020")`)
-/// - certification (content): The certification
-/// - date (content): The date the certification was achieved
-#let resume-certification(certification, date) = {
-  justified-header(certification, date)
-}
-
-/// Show a list of skills in the resume under a given category.
-/// - category (string): The category of the skills
-/// - items (list): The list of skills. This can be a list of strings but you can also emphasize certain skills by using the `strong` function.
 #let resume-skill-item(category, items) = {
   set block(below: 0.45em)
   set pad(top: 2pt)
