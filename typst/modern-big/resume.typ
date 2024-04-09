@@ -1,5 +1,5 @@
 #import "resume-lib.typ": *
-// #import "fa-lib.typ": *
+
 #show: resume.with(
   author: (
       firstname: "Tasnimul", 
@@ -8,16 +8,11 @@
       phone: "+880-1731969827",
       github: "orkhasnat",
       linkedin: "tasnimul-hasnat-37515025a",
-      // positions: (
-      //   "Software Developer",
-      //   "Cybersecurity Analyst", 
-      //   "Open Source Enthusiast"
-      // )
   ),
 )
 
 = About Me
-I'm a final semester undergraduate student with a keen interest in open-source projects. I actively seek out opportunities to learn and grow, especially within collaborative team environments where I can contribute to technological innovations. Adept at bug hunting and vulnerability detection, I excel at performing under tight deadlines and pressure.
+I'm a final semester undergraduate student with a keen interest in open-source projects. I actively seek out opportunities to learn and grow, specially within collaborative team environments where I can contribute to technological innovations. Adept at bug hunting and vulnerability detection, I excel at performing under tight deadlines and pressure.
 = Education
 
 #resume-entry(
@@ -38,53 +33,35 @@ I'm a final semester undergraduate student with a keen interest in open-source p
   date: "2015 - 2017",
   description: "GPA: "+text(fill:color-darkgray)[5.00]+" out of 5.00"
 )
+
 #v(4pt)
-= Experience
+= Research Experience
+#resume-entry(
+  title: "Binary Function Clone Detection Using MBA Simplification",
+  location: "Ongoing",
+  date: "",
+  description:[
+      #v(4pt)
+      - Proposed a novel approach to binary function clone detection utilizing MBA (Mathematical Boolean Arithmetic) simplification.
+      - Trying to employ dynamic symbolic execution to coalesce assembly instructions into mathematical expressions.
+      - Conducting benchmark study against other methods of binary clone detection to evaluate the performance of the proposed model.
+  ]
+)
+
+#v(4pt)
+= Work Experience
 #resume-entry(
   title: "Beetles Cyber Security Ltd.",
-  location:"PenTest Intern",
-  date:"",
+  location: "PenTest Intern",
+  date: "",
   description:[
-    // #v(2pt)
-    Became familiarized with vulnerability assessment and malware development.]
+    #v(2pt)
+    - Became familiarized with vulnerability assessment and malware development.
+  ]
 )
+
+
 #v(4pt)
-
-= Achievements
-// #resume-achievement[
-//   #let t = text.with(weight:"black")
-//   - #t[BUET CSE Fest CTF 2023]
-//     - *Champion* among 100+ teams.
-//   - #t[DU Cefalo ITVerse CTF 2023]
-//     - *4#super[th]* among 60+ teams.
-//   - #t[RITSEC International CTF 2023]
-//     - *7#super[th]* among 710+ _international_ teams.
-//   - #t[SUST SWE Technovent CTF 2023]
-//     - *6#super[th]* among 40+ teams.
-//   - #t[RIOT Flaghunt CTF 2022]
-//     - *8#super[th]* among 80+ teams.
-//   - #t[Awarded IUT-OIC Partial Scholarship]
-//     - Ranked *195#super[th]* amongst 4200+ participants. 
-//     - Scholarship awarded for 3 Years equivalent to *\$13500*.
-// ]
-
-
-#resume-achievement2[
-BUET CSE Fest CTF 2023][
-  *Champion* among 100+ teams.]
-
-#resume-achievement2[DU Cefalo ITVerse CTF 2023][*4#super[th]* among 60+ teams.]
-
-#resume-achievement2[RITSEC International CTF 2023][*7#super[th]* among 710+ _international_ teams.]
-
-#resume-achievement2[SUST SWE Technovent CTF 2023][*6#super[th]* among 40+ teams.]
-#resume-achievement2[RIOT Flaghunt CTF 2022][*8#super[th]* among 80+ teams.]
- #resume-achievement2[Awarded IUT-OIC Partial Scholarship][
-//  Ranked *195#super[th]* amongst 4200+ participants. \
-Scholarship awarded for 3 Years equivalent to *\$13500*.]
-
-
-
 = Projects
 
 #resume-project(
@@ -93,14 +70,17 @@ Scholarship awarded for 3 Years equivalent to *\$13500*.]
   stack: "EJS, ExpressJs, MariaDB, Bulma"
 )
 #resume-item[
-Abaash is a user-friendly web application designed to facilitate flat searches and rentals for IUT students, while simplifying property management for flat owners.]
+  A web-based platform that simplifies the process of finding and renting flats for non-residential IUT students. It offers a user-friendly interface for flat owners and tenants, while providing students with a one-stop solution for accommodation and dining needs, including the management of cafeteria coupons.
+  #v(2pt)
+]
 #resume-project(
   title: "Broke_No_More",
   location: github-link("orkhasnat/Broke_No_More"),
   stack: "Python, Keras, Pandas"
 )
 #resume-item[
-Developed an LSTM-based deep learning model to forecast stock price movements in the Dhaka Stock Exchange, enhancing investment decision-making with accurate predictions.
+  Developed a deep learning model to forecast stock price movements in the Dhaka Stock Exchange, enhancing investment decision-making with accurate predictions. Employed a comprehensive methodology, encompassing data acquisition, pre-processing techniques, and proposed a RNN-LSTM forecasting model.
+  #v(2pt)
 ]
 #resume-project(
   title: "Fox's Tale",
@@ -108,30 +88,45 @@ Developed an LSTM-based deep learning model to forecast stock price movements in
   stack: "C++, SFML"
 )
 #resume-item[
-A modern tribute to the classic Rapid Roll game, built with SFML. Players control a ball navigating through rising platforms while avoiding obstacles and collecting bonuses. With updated graphics, sound effects, power-ups, and achievements.]
+  A modern tribute to the classic Rapid Roll game, created using the SFML library. It adds new features such as updated graphics, sound effects, obstacles, power-ups, and achievements to the original game. Nostalgic fan or a new player, it provides an engaging gaming experience that tests your reflexes, agility, and strategic thinking.
+  #v(2pt)
+]
+#resume-project(
+  title: "Sanctuary",
+  location: github-link("orkhasnat/Sanctuary"),
+  stack: "Java, JavaFX, FXML, MariaDB"
+)
+#resume-item[
+  A user-friendly application built with JavaFX, designed to simplify the process of ﬁnding and renting flats for IUT students. It offers students the ability to find flats based on their preferences, and allows flat owners to easily manage their properties and tenants.
+  #v(2pt)
+]
 #resume-project(
   title: "Outbreak",
   location: github-link("orkhasnat/Outbreak"),
   stack: "C++, SFML"
 )
 #resume-item[
-Developed a viral simulator to model virus spread, incorporating parameters like transmission rate, mortality rate, and incubation period. Users can adjust these parameters to analyze their impact on virus transmission dynamics.]
+  Outbreak is a viral simulator developed in C++ and SFML. It models the spread of viruses based on parameters such as transmission rate, mortality rate, and incubation period. Users can manipulate these parameters to see how they affect the spread of the virus.
+  #v(2pt)
+]
 #resume-project(
   title: "ISC-BD",
   location: github-link("orkhasnat/ISC-BD"),
   stack: "Astro, TypeScript, Tailwind"
 )
 #resume-item[
-  #set text(hyphenate: false)
+  // #set text(hyphenate: false)
   Developed a comprehensive full-stack portfolio website for a non-profit NGO. Managed the entire development lifecycle, from initial conceptualization to deployment.
+  #v(2pt)
 ]
 
 = Skills
-
 #resume-skill-item("Programming Languages", ("C","C++", "Java", "Go", "Python", "JavaScript","SQL","x86 Assembly"))
 #resume-skill-item("Libraries & Frameworks", ("Astro","React","Tailwind","SFML","ExpressJS","Pandas","Keras"))
 #resume-skill-item("Other Tools", ("Git","Bash","Linux","Docker","Excel","Burp Suite","UML","LaTeX"))
 #resume-skill-item("Database",("Oracle","MySQL","MariaDB"))
+
+
 
 = Co-Curriculars
 #resume-cocurr[
@@ -144,5 +139,42 @@ Developed a viral simulator to model virus spread, incorporating parameters like
   - Participated in various national and international CTF (Capture the Flag) competitions since 2022.
 ]
 
-// = Research
-// = Reference
+
+#v(4pt)
+= Achievements
+#resume-achievement[
+  #let t = text.with(weight:"black")
+  - #t[BUET CSE Fest CTF 2023]
+    - *Champion* among 100+ teams.
+  - #t[DU Cefalo ITVerse CTF 2023]
+    - *4#super[th]* among 60+ teams.
+  - #t[RITSEC International CTF 2023]
+    - *7#super[th]* among 710+ _international_ teams.
+  - #t[SUST SWE Technovent CTF 2023]
+    - *6#super[th]* among 40+ teams.
+  - #t[RIOT Flaghunt CTF 2022]
+    - *8#super[th]* among 80+ teams.
+  - #t[Awarded IUT-OIC Partial Scholarship]
+    - Ranked *195#super[th]* amongst 4200+ participants. 
+    - Scholarship awarded for 3 Years equivalent to *\$13500*.
+]
+
+
+// #resume-achievement2[
+// BUET CSE Fest CTF 2023][
+//   *Champion* among 100+ teams.]
+
+// #resume-achievement2[DU Cefalo ITVerse CTF 2023][*4#super[th]* among 60+ teams.]
+
+// #resume-achievement2[RITSEC International CTF 2023][*7#super[th]* among 710+ _international_ teams.]
+
+// #resume-achievement2[SUST SWE Technovent CTF 2023][*6#super[th]* among 40+ teams.]
+// #resume-achievement2[RIOT Flaghunt CTF 2022][*8#super[th]* among 80+ teams.]
+//  #resume-achievement2[Awarded IUT-OIC Partial Scholarship][
+// //  Ranked *195#super[th]* amongst 4200+ participants. \
+// Scholarship awarded for 3 Years equivalent to *\$13500*.]
+
+#v(4pt)
+= Reference
+#resume-ref("Dr. Md Moniruzzaman","Assistant Professor","milton@iut-dhaka.edu")
+#resume-ref("Imtiaj Ahmed Chowdhury","Lecturer","imtiajahmed@iut-dhaka.edu")

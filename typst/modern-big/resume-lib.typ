@@ -14,7 +14,6 @@
 
 /// Helpers
 
-// layout utility
 #let __justify_align(left_body, right_body) = {
   set text(fill:color-lightgray )
   block[
@@ -47,11 +46,6 @@
   ]
 }
 
-/// Show a link with an icon, specifically for Github projects
-/// *Example*
-/// #example(`resume.github-link("DeveloperPaul123/awesome-resume")`)
-/// - github_path (string): The path to the Github project (e.g. "DeveloperPaul123/awesome-resume")
-/// -> none
 #let github-link(github_path) = {
   set box(height: 11pt)
   
@@ -60,24 +54,16 @@
   ]
 }
 
-/// Right section for the justified headers
-/// - body (content): The body of the right header
-/// - accent_color (color): The accent color to color the text with. This defaults to the default-accent-color
 #let secondary-right-header(body, accent_color: default-accent-color) = {
   set text(accent_color, size: 9pt, style: "italic", weight: "medium")
   body
 }
 
-/// Right section of a tertiaty headers. 
-/// - body (content): The body of the right header
 #let tertiary-right-header(body) = {
   set text(weight: "medium", style: "italic", size: 7pt)
   body
 }
 
-/// Justified header that takes a primary section and a secondary section. The primary section is on the left and the secondary section is on the right.
-/// - primary (content): The primary section of the header
-/// - secondary (content): The secondary section of the header
 #let justified-header(primary, secondary) = {
   set block(above: 0em, below: 0.5em)
   pad[
@@ -89,9 +75,6 @@
   ]
 }
 
-/// Justified header that takes a primary section and a secondary section. The primary section is on the left and the secondary section is on the right. This is a smaller header compared to the `justified-header`.
-/// - primary (content): The primary section of the header
-/// - secondary (content): The secondary section of the header
 #let secondary-justified-header(primary, secondary) = {
     __justify_align[
       === #primary
@@ -101,17 +84,6 @@
 }
 /// --- End of Helpers
 
-/// ---- Resume Template ----
-
-/// Resume template that is inspired by the Awesome CV Latex template by posquit0. This template can loosely be considered a port of the original Latex template.
-///
-/// The original template: https://github.com/posquit0/Awesome-CV 
-///
-/// - author (content): Structure that takes in all the author's information
-/// - date (string): The date the resume was created
-/// - accent_color (color): The accent color of the resume
-/// - body (content): The body of the resume
-/// -> none
 #let resume(
   author: (:), 
   accent_color: default-accent-color, 
@@ -271,7 +243,7 @@
   pad[
     #grid(
       columns: (25fr, 70fr),
-      gutter: 10pt,
+      gutter: 15pt,
       align(right)[
         #set text(hyphenate: false)
         == #category
@@ -314,6 +286,7 @@
   )
   body
 }
+
 #let resume-project(
   title: none, 
   location: "", 
@@ -330,4 +303,21 @@
       )
     - #stack
   ]
+}
+
+#let resume-ref(name,position,mail)={
+  resume-entry(
+  title: name,
+  location: [
+    #link("mailto:"+mail)[#box(height:7pt,fa-envelope(fill:color-darkgray)) #mail]
+    // #link("+8801618054411")
+  ],
+  date: "",
+  description:[
+    #v(2pt)
+    #position \
+    Computer Science and Engineering Department\
+    Islamic University of Technology
+  ]
+)
 }
