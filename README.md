@@ -9,5 +9,7 @@ Currently I have these CVs:
  - Basic Cover Letter
 
  > *N.B*
+ > 
  > For Latex templates, naming convention of folder is such,
+ >
  > `<template_name>_(latex)`
