@@ -1,5 +1,17 @@
 #import "fa-lib.typ": *
 
+// font sizes
+#let bf = 9.5pt
+#let h1f = bf+4pt
+#let h2f = bf+2pt
+#let h2secf = bf+1pt
+#let h3f = bf - 1pt
+
+#let markerf = h3f
+#let sepf = markerf - 2pt
+#let padf = 2pt
+#let spf= 1em
+
 // const color
 #let color-darknight = rgb("141E1E")
 #let color-darkgray = rgb("213131")
@@ -55,17 +67,17 @@
 }
 
 #let secondary-right-header(body, accent_color: default-accent-color) = {
-  set text(accent_color, size: 9pt, style: "italic", weight: "medium")
+  set text(accent_color, size: h2secf, style: "italic", weight: "medium")
   body
 }
 
 #let tertiary-right-header(body) = {
-  set text(weight: "medium", style: "italic", size: 7pt)
+  set text(weight: "medium", style: "italic", size: h3f)
   body
 }
 
 #let justified-header(primary, secondary) = {
-  set block(above: 0em, below: 0.5em)
+  set block(above: spf*0, below: spf)
   pad[
     #__justify_align[
       == #primary
@@ -96,7 +108,7 @@
   set text(
     font: ("Atkinson Hyperlegible"),
     lang: "en",
-    size: 8pt,
+    size: bf,
     fill: color-darkgray,
     hyphenate: false,
     fallback: true
@@ -109,8 +121,8 @@
   )
   
   // set paragraph spacing
-  show par: set block(above: 0.75em, below: 0.75em)
-  set par(justify: true)
+  show par: set block(above: spf, below: spf)
+  set par(justify: true,linebreaks: "optimized")
 
   set heading(
     numbering: none,
@@ -118,9 +130,9 @@
   )
   
   show heading.where(level:1): it => [
-    #set block(above: 1em, below: 1em)
+    #set block(above: spf*0, below: spf)
     #set text(
-      size: 12pt,
+      size: h1f,
       weight: "regular"
     )
     #align(left)[   
@@ -133,34 +145,32 @@
   ]
 
   show heading.where(level: 2): it => {
-    set text(color-darkgray, size: 10pt, style: "normal", weight: "bold")
+    set text(color-darkgray, size: h2f, style: "normal", weight: "bold")
     it.body
   }
 
   show heading.where(level: 3): it => {
-    set text(size: 7pt, weight: "bold")
+    set text(size: h3f, weight: "bold")
     smallcaps[#it.body]
   }
   
   let name = {
     align(center)[
-      #pad(bottom: 5pt)[
         #block[
           #set text(size: 32pt, style: "normal", font: ("Free Serif"))
           #text(accent_color, weight: "regular")[#author.firstname]
           #text(weight: "bold")[#author.lastname]
         ]
-      ]
     ]
   }
 
   let contacts = {
-    set box(height: 7pt)
+    set box(height: markerf)
     
-    let separator = box(width: 5pt)
+    let separator = box(width: sepf)
 
     align(center)[
-      #set text(size: 10pt, weight: "regular", 
+      #set text(size: h2f, weight: "regular", 
       style: "normal",fill:default-accent-color)
       #block[
         #align(horizon)[
@@ -190,9 +200,8 @@
 }
 
 #let resume-item(body) = {
-  set text(size: 8pt, style: "normal", weight: "light")
-  set par(leading: 0.65em)
-  // set list(indent: 0.5em)
+  set text(size: bf, style: "normal", weight: "light")
+  set par(leading: spf*0.75)
   body
 }
 
@@ -209,8 +218,8 @@
 }
 
 #let resume-skill-item(category, items) = {
-  set block(below: 0.45em)
-  set pad(top: 2pt)
+  set block(below: spf*0.65)
+  set pad(top: padf)
   
   pad[
     #grid(
@@ -221,7 +230,7 @@
         == #category
       ],
       align(left)[
-        #set text(size: 9pt, style: "normal", weight: "light",fill:default-accent-color,)
+        #set text(size: h2secf, style: "normal", weight: "light",fill:default-accent-color,)
         #items.join(",  ")
       ],
     )
@@ -235,8 +244,7 @@
   // let t = text.with(weight:"black")
   set list(
   tight:true,
-  // body-indent: 0.5em,
-  marker: ([#box(height:7pt,fa-trophy(fill:color-lightgray))],[])
+  marker: ([#box(height:markerf,fa-trophy(fill:color-lightgray))],[])
   )
   body
 }
@@ -254,7 +262,7 @@
 #let resume-cocurr(body) = {
   set list(
   tight:true,
-  marker: [#box(height:7pt,fa-award(fill:color-lightgray))]
+  marker: [#box(height:markerf,fa-award(fill:color-lightgray))]
   )
   body
 }
@@ -269,10 +277,11 @@
     #set text(fill:color-lightgray,weight:"bold")
     #set list(
       tight: true,
-      marker:[#box(height:6pt,fa-code(fill:default-accent-color))],
-      indent: 2pt,
-      body-indent: 0.5em
+      marker:[#box(height:markerf,fa-code(fill:default-accent-color))],
+      indent: padf,
+      body-indent: spf* 0.5
       )
+    #v(padf)
     - #stack
   ]
 }
@@ -281,12 +290,12 @@
   resume-entry(
   title: name,
   location: [
-    #link("mailto:"+mail)[#box(height:7pt,fa-envelope(fill:color-lightgray)) #mail]
+    #link("mailto:"+mail)[#box(height:markerf,fa-envelope(fill:color-lightgray)) #mail]
     // #link("+8801618054411")
   ],
   date: "",
   description:[
-    #v(2pt)
+    // #v(padf)
     #position \
     Computer Science and Engineering Department\
     Islamic University of Technology

@@ -34,34 +34,29 @@ I'm a final semester undergraduate student with a keen interest in open-source p
   description: "GPA: "+text(fill:color-darkgray)[5.00]+" out of 5.00"
 )
 
-#v(4pt)
 = Research Experience
 #resume-entry(
   title: "Binary Function Clone Detection Using MBA Simplification",
   location: "Ongoing",
   date: "",
   description:[
-      #v(4pt)
       - Proposed a novel approach to binary function clone detection utilizing MBA (Mathematical Boolean Arithmetic) simplification.
       - Trying to employ dynamic symbolic execution to coalesce assembly instructions into mathematical expressions.
       - Conducting benchmark study against other methods of binary clone detection to evaluate the performance of the proposed model.
   ]
 )
 
-#v(4pt)
 = Work Experience
 #resume-entry(
   title: "Beetles Cyber Security Ltd.",
   location: "PenTest Intern",
   date: "",
   description:[
-    #v(2pt)
-    - Became familiarized with vulnerability assessment and malware development.
+    Became familiarized with vulnerability assessment and malware development.
   ]
 )
 
 
-#v(4pt)
 = Projects
 
 #resume-project(
@@ -71,7 +66,6 @@ I'm a final semester undergraduate student with a keen interest in open-source p
 )
 #resume-item[
   A web-based platform that simplifies the process of finding and renting flats for non-residential IUT students. It offers a user-friendly interface for flat owners and tenants, while providing students with a one-stop solution for accommodation and dining needs, including the management of cafeteria coupons.
-  #v(2pt)
 ]
 #resume-project(
   title: "Broke_No_More",
@@ -80,7 +74,6 @@ I'm a final semester undergraduate student with a keen interest in open-source p
 )
 #resume-item[
   Developed a deep learning model to forecast stock price movements in the Dhaka Stock Exchange, enhancing investment decision-making with accurate predictions. Employed a comprehensive methodology, encompassing data acquisition, pre-processing techniques, and proposed a RNN-LSTM forecasting model.
-  #v(2pt)
 ]
 #resume-project(
   title: "Fox's Tale",
@@ -89,16 +82,6 @@ I'm a final semester undergraduate student with a keen interest in open-source p
 )
 #resume-item[
   A modern tribute to the classic Rapid Roll game, created using the SFML library. It adds new features such as updated graphics, sound effects, obstacles, power-ups, and achievements to the original game. Nostalgic fan or a new player, it provides an engaging gaming experience that tests your reflexes, agility, and strategic thinking.
-  #v(2pt)
-]
-#resume-project(
-  title: "Sanctuary",
-  location: github-link("orkhasnat/Sanctuary"),
-  stack: "Java, JavaFX, FXML, MariaDB"
-)
-#resume-item[
-  A user-friendly application built with JavaFX, designed to simplify the process of ﬁnding and renting flats for IUT students. It offers students the ability to find flats based on their preferences, and allows flat owners to easily manage their properties and tenants.
-  #v(2pt)
 ]
 #resume-project(
   title: "Outbreak",
@@ -107,7 +90,18 @@ I'm a final semester undergraduate student with a keen interest in open-source p
 )
 #resume-item[
   Outbreak is a viral simulator developed in C++ and SFML. It models the spread of viruses based on parameters such as transmission rate, mortality rate, and incubation period. Users can manipulate these parameters to see how they affect the spread of the virus.
-  #v(2pt)
+]
+
+#pagebreak()
+
+
+#resume-project(
+  title: "Sanctuary",
+  location: github-link("orkhasnat/Sanctuary"),
+  stack: "Java, JavaFX, FXML, MariaDB"
+)
+#resume-item[
+  A user-friendly application built with JavaFX, designed to simplify the process of ﬁnding and renting flats for IUT students. It offers students the ability to find flats based on their preferences, and allows flat owners to easily manage their properties and tenants.
 ]
 #resume-project(
   title: "ISC-BD",
@@ -117,7 +111,6 @@ I'm a final semester undergraduate student with a keen interest in open-source p
 #resume-item[
   // #set text(hyphenate: false)
   Developed a comprehensive full-stack portfolio website for a non-profit NGO. Managed the entire development lifecycle, from initial conceptualization to deployment.
-  #v(2pt)
 ]
 
 = Skills
@@ -129,6 +122,7 @@ I'm a final semester undergraduate student with a keen interest in open-source p
 
 
 = Co-Curriculars
+#v(padf*4)
 #resume-cocurr[
   - Member of #link("https://ctftime.org/team/175924")[_IUT Genesis_], team ranked #text(weight:"bold")[1#super("st")] in #link("https://ctftime.org/stats/2023/BD")[_CTFtime_] in Bangladesh (2023).
   - Organizer and Problem Setter of IUT 11#super("th") National ICT Fest 2024.
@@ -140,8 +134,8 @@ I'm a final semester undergraduate student with a keen interest in open-source p
 ]
 
 
-#v(4pt)
 = Achievements
+#v(padf*4)
 #resume-achievement[
   #let t = text.with(weight:"black")
   - #t[BUET CSE Fest CTF 2023]
@@ -174,7 +168,6 @@ I'm a final semester undergraduate student with a keen interest in open-source p
 // //  Ranked *195#super[th]* amongst 4200+ participants. \
 // Scholarship awarded for 3 Years equivalent to *\$13500*.]
 
-#v(4pt)
 = Reference
 #resume-ref("Dr. Md Moniruzzaman","Assistant Professor","milton@iut-dhaka.edu")
 #resume-ref("Imtiaj Ahmed Chowdhury","Lecturer","imtiajahmed@iut-dhaka.edu")
