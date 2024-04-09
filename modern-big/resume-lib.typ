@@ -7,7 +7,7 @@
 #let h2secf = bf+1pt
 #let h3f = bf - 1pt
 
-#let markerf = h3f
+#let markerf = 7pt
 #let sepf = markerf - 2pt
 #let padf = 2pt
 #let spf= 1em

@@ -38,14 +38,13 @@ I'm a final semester undergraduate student with a keen interest in open-source p
   date: "2015 - 2017",
   description: "GPA: "+text(fill:color-darkgray)[5.00]+" out of 5.00"
 )
-#v(4pt)
+
 = Experience
 #resume-entry(
   title: "Beetles Cyber Security Ltd.",
   location:"PenTest Intern",
   date:"",
   description:[
-    // #v(2pt)
     Became familiarized with vulnerability assessment and malware development.]
 )
 #v(4pt)
@@ -143,6 +142,3 @@ Developed a viral simulator to model virus spread, incorporating parameters like
   - Instructor at IUT CTF Club.
   - Participated in various national and international CTF (Capture the Flag) competitions since 2022.
 ]
-
-// = Research
-// = Reference

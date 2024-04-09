@@ -1,5 +1,17 @@
 #import "fa-lib.typ": *
 
+// font sizes
+#let bf = 8pt
+#let h1f = bf+4pt
+#let h2f = bf+2pt
+#let h2secf = bf+1pt
+#let h3f = bf - 1pt
+
+#let markerf = 7pt
+#let sepf = markerf - 2pt
+#let padf = 2pt
+#let spf= 1em
+
 // const color
 // #let color-darknight = rgb("131A28")
 #let color-darknight = rgb("141E1E")
@@ -7,6 +19,7 @@
 // #let default-accent-color = rgb("333ECC")
 #let default-accent-color = rgb("2C7865")
 #let color-lightgray = rgb("415161")
+
 // const icons
 #let linkedin-icon = box(fa-icon("linkedin", fa-set: "Brands", fill: color-darknight))
 #let github-icon = box(fa-icon("github", fa-set: "Brands", fill: color-darknight))
@@ -48,11 +61,6 @@
   ]
 }
 
-/// Show a link with an icon, specifically for Github projects
-/// *Example*
-/// #example(`resume.github-link("DeveloperPaul123/awesome-resume")`)
-/// - github_path (string): The path to the Github project (e.g. "DeveloperPaul123/awesome-resume")
-/// -> none
 #let github-link(github_path) = {
   set box(height: 11pt)
   
@@ -61,26 +69,18 @@
   ]
 }
 
-/// Right section for the justified headers
-/// - body (content): The body of the right header
-/// - accent_color (color): The accent color to color the text with. This defaults to the default-accent-color
 #let secondary-right-header(body, accent_color: default-accent-color) = {
-  set text(accent_color, size: 9pt, style: "italic", weight: "medium")
+  set text(accent_color, size: h2secf, style: "italic", weight: "medium")
   body
 }
 
-/// Right section of a tertiaty headers. 
-/// - body (content): The body of the right header
 #let tertiary-right-header(body) = {
-  set text(weight: "medium", style: "italic", size: 7pt)
+  set text(weight: "medium", style: "italic", size: h3f)
   body
 }
 
-/// Justified header that takes a primary section and a secondary section. The primary section is on the left and the secondary section is on the right.
-/// - primary (content): The primary section of the header
-/// - secondary (content): The secondary section of the header
 #let justified-header(primary, secondary) = {
-  set block(above: 0em, below: 0.5em)
+  set block(above: spf*0, below: spf*0.5)
   pad[
     #__justify_align[
       == #primary
@@ -90,9 +90,6 @@
   ]
 }
 
-/// Justified header that takes a primary section and a secondary section. The primary section is on the left and the secondary section is on the right. This is a smaller header compared to the `justified-header`.
-/// - primary (content): The primary section of the header
-/// - secondary (content): The secondary section of the header
 #let secondary-justified-header(primary, secondary) = {
     __justify_align[
       === #primary
@@ -104,15 +101,6 @@
 
 /// ---- Resume Template ----
 
-/// Resume template that is inspired by the Awesome CV Latex template by posquit0. This template can loosely be considered a port of the original Latex template.
-///
-/// The original template: https://github.com/posquit0/Awesome-CV 
-///
-/// - author (content): Structure that takes in all the author's information
-/// - date (string): The date the resume was created
-/// - accent_color (color): The accent color of the resume
-/// - body (content): The body of the resume
-/// -> none
 #let resume(
   author: (:), 
   // date: datetime.today().display("[month repr:long] [day], [year]"), 
@@ -124,10 +112,9 @@
   )
   
   set text(
-    // font: ("Source Sans Pro"),
     font: ("Atkinson Hyperlegible"),
     lang: "en",
-    size: 8pt,
+    size: bf,
     fill: color-darkgray,
     hyphenate: false,
     fallback: true
@@ -137,7 +124,7 @@
     paper: "a4",
     margin: (left: 15mm, right: 15mm, top: 10mm, bottom: 10mm),
     // footer: [
-    //   #set text(fill: gray, size: 8pt)
+    //   #set text(fill: gray, size: bf)
     //   #__justify_align_3[
     //     #smallcaps[#date]
     //   ][
@@ -155,7 +142,7 @@
   )
   
   // set paragraph spacing
-  show par: set block(above: 0.75em, below: 0.75em)
+  show par: set block(above: spf*0.75, below: spf*0.75)
   set par(justify: true)
 
   set heading(
@@ -164,9 +151,9 @@
   )
   
   show heading.where(level:1): it => [
-    #set block(above: 1em, below: 1em)
+    #set block(above: spf, below: spf)
     #set text(
-      size: 12pt,
+      size: h1f,
       weight: "regular"
     )
     #align(left)[   
@@ -179,18 +166,18 @@
   ]
 
   show heading.where(level: 2): it => {
-    set text(color-darkgray, size: 10pt, style: "normal", weight: "bold")
+    set text(color-darkgray, size: h2f, style: "normal", weight: "bold")
     it.body
   }
 
   show heading.where(level: 3): it => {
-    set text(size: 7pt, weight: "bold")
+    set text(size: h3f, weight: "bold")
     smallcaps[#it.body]
   }
   
   let name = {
     align(center)[
-      #pad(bottom: 5pt)[
+      #pad(bottom: sepf)[
         #block[
           #set text(size: 32pt, style: "normal", font: ("Free Serif"))
           #text(accent_color, weight: "regular")[#author.firstname]
@@ -203,7 +190,7 @@
   let positions = {
     set text(
       accent_color,
-      size: 9pt,
+      size: h2secf,
       weight: "regular"
     )
     align(center)[
@@ -217,7 +204,7 @@
 
   // let address = {
   //   set text(
-  //     size: 9pt,
+  //     size: h2secf,
   //     weight: "bold",
   //     style: "italic",
   //   )
@@ -227,12 +214,12 @@
   // }
 
   let contacts = {
-    set box(height: 7pt)
+    set box(height: markerf)
     
-    let separator = box(width: 5pt)
+    let separator = box(width: sepf)
 
     align(center)[
-      #set text(size: 8pt, weight: "regular", style: "normal")
+      #set text(size: bf, weight: "regular", style: "normal")
       #block[
         #align(horizon)[
           #phone-icon
@@ -260,21 +247,12 @@
   body
 }
 
-/// The base item for resume entries. 
-/// This formats the item for the resume entries. Typically your body would be a bullet list of items. Could be your responsibilities at a company or your academic achievements in an educational background section.
-/// - body (content): The body of the resume entry
 #let resume-item(body) = {
-  set text(size: 8pt, style: "normal", weight: "light")
-  set par(leading: 0.65em)
-  // set list(indent: 0.5em)
+  set text(size: bf, style: "normal", weight: "light")
+  set par(leading: spf*0.65)
   body
 }
 
-/// The base item for resume entries. This formats the item for the resume entries. Typically your body would be a bullet list of items. Could be your responsibilities at a company or your academic achievements in an educational background section.
-/// - title (string): The title of the resume entry
-/// - location (string): The location of the resume entry
-/// - date (string): The date of the resume entry, this can be a range (e.g. "Jan 2020 - Dec 2020")
-/// - description (content): The body of the resume entry
 #let resume-entry(
   title: none, 
   location: "", 
@@ -287,29 +265,9 @@
   ]
 }
 
-/// Show cumulative GPA.
-/// *Example:*
-/// #example(`resume.resume-gpa("3.5", "4.0")`)
-#let resume-gpa(numerator, denominator) = {
-  set text(size: 12pt, style: "italic", weight: "light")
-  text[Cumulative GPA: #box[#strong[#numerator] / #denominator]]
-}
-
-/// Show a certification in the resume.
-/// *Example:*
-/// #example(`resume.resume-certification("AWS Certified Solutions Architect - Associate", "Jan 2020")`)
-/// - certification (content): The certification
-/// - date (content): The date the certification was achieved
-#let resume-certification(certification, date) = {
-  justified-header(certification, date)
-}
-
-/// Show a list of skills in the resume under a given category.
-/// - category (string): The category of the skills
-/// - items (list): The list of skills. This can be a list of strings but you can also emphasize certain skills by using the `strong` function.
 #let resume-skill-item(category, items) = {
-  set block(below: 0.45em)
-  set pad(top: 2pt)
+  set block(below: spf*0.45)
+  set pad(top: padf)
   
   pad[
     #grid(
@@ -320,7 +278,7 @@
         == #category
       ],
       align(left)[
-        #set text(size: 9pt, style: "normal", weight: "light",fill:default-accent-color,)
+        #set text(size: h2secf, style: "normal", weight: "light",fill:default-accent-color,)
         #items.join(",  ")
       ],
     )
@@ -334,8 +292,7 @@
   // let t = text.with(weight:"black")
   set list(
   tight:true,
-  // body-indent: 0.5em,
-  marker: ([#box(height:7pt,fa-trophy(fill:color-lightgray))],[])
+  marker: ([#box(height:markerf,fa-trophy(fill:color-lightgray))],[])
   )
   body
 }
@@ -353,7 +310,7 @@
 #let resume-cocurr(body) = {
   set list(
   tight:true,
-  marker: [#box(height:7pt,fa-award(fill:color-lightgray))]
+  marker: [#box(height:markerf,fa-award(fill:color-lightgray))]
   )
   body
 }
@@ -367,9 +324,9 @@
     #set text(fill:color-lightgray,weight:"bold")
     #set list(
       tight: true,
-      marker:[#box(height:6pt,fa-code(fill:default-accent-color))],
-      indent: 2pt,
-      body-indent: 0.5em
+      marker:[#box(height:markerf,fa-code(fill:default-accent-color))],
+      indent: padf,
+      body-indent: spf*0.5
       )
     - #stack
   ]
