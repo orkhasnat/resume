@@ -14,13 +14,16 @@
 
 // variables 
 #let position = "Lecturer of CSE"
-#let employer = "United International University"
-#let location = "United City, Madani Avenue, Dhaka-1212"
+// #let employer = "United International University"
+#let employer = "Bangladesh University of Business and Technology"
+// #let location = "United City, Madani Avenue, Dhaka-1212"
+#let location = "Rupnagar R/A, Mirpur-2, Dhaka-1216"
+
 
 // #let date= datetime.today()
 #let date= datetime(
   year: 2024,
-  month: 4,
+  month: 5,
   day: 10
 )
 
