@@ -15,17 +15,13 @@
 // variables 
 #let position = "Lecturer of CSE"
 // #let employer = "United International University"
-#let employer = "Bangladesh University of Business and Technology"
+#let employer = "Central Women's University"
 // #let location = "United City, Madani Avenue, Dhaka-1212"
-#let location = "Rupnagar R/A, Mirpur-2, Dhaka-1216"
+#let location = "6 Hatkhola Road, Dhaka-1203"
 
 
-// #let date= datetime.today()
-#let date= datetime(
-  year: 2024,
-  month: 5,
-  day: 10
-)
+#let date= datetime.today()
+// #let date= datetime( year: 2024, month: 5, day: 10)
 
 
 // ---- Begin Coverletter ---------
