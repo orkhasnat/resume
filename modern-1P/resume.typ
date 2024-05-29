@@ -20,7 +20,7 @@
 // I'm a final semester undergraduate student with a keen interest in open-source projects. I actively seek out opportunities to learn and grow, specially within collaborative team environments where I can contribute to technological innovations. Adept at bug hunting and vulnerability detection, I excel at performing under tight deadlines and pressure.
 
 
-I'm a recent graduate with a passion for technology and a strong interest in open-source development. I thrive in collaborative environments, actively seeking opportunities to learn and grow while excelling under pressure and tight deadlines. Eager to apply my skills and enthusiasm to contribute meaningfully to innovative projects aimed at the betterment of society.
+I'm a recent graduate with a passion for technology and a strong interest in open-source development. I flourish in collaborative environments, actively seeking opportunities to learn and grow while excelling under pressure and tight deadlines. Eager to apply my skills and enthusiasm to contribute meaningfully to innovative projects aimed at the betterment of society.
 = Education
 
 #resume-entry(
