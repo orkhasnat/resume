@@ -17,14 +17,17 @@
 )
 
 = About Me
-I'm a final semester undergraduate student with a keen interest in open-source projects. I actively seek out opportunities to learn and grow, specially within collaborative team environments where I can contribute to technological innovations. Adept at bug hunting and vulnerability detection, I excel at performing under tight deadlines and pressure.
+// I'm a final semester undergraduate student with a keen interest in open-source projects. I actively seek out opportunities to learn and grow, specially within collaborative team environments where I can contribute to technological innovations. Adept at bug hunting and vulnerability detection, I excel at performing under tight deadlines and pressure.
+
+
+I'm a recent graduate with a passion for technology and a strong interest in open-source development. I thrive in collaborative environments, actively seeking opportunities to learn and grow while excelling under pressure and tight deadlines. Eager to apply my skills and enthusiasm to contribute meaningfully to innovative projects aimed at the betterment of society.
 = Education
 
 #resume-entry(
   title: "Islamic University of Technology",
   location: "B.Sc in Computer Science & Engineering",
   date: "Jan 2020 - Present",
-  description: "CGPA: "+text(fill:color-darkgray)[3.77]+" out of 4.00 | Position: "+text(fill:color-darkgray)[19#super("th")]
+  description: "CGPA: "+text(fill:color-darkgray)[3.77]+" out of 4.00"  // | Position: "+text(fill:color-darkgray)[19#super("th")]
 )
 #resume-entry(
   title: "Dhaka Residential Model College",
@@ -49,7 +52,6 @@ I'm a final semester undergraduate student with a keen interest in open-source p
 )
 #v(4pt)
 
-= Achievements
 // #resume-achievement[
 //   #let t = text.with(weight:"black")
 //   - #t[BUET CSE Fest CTF 2023]
@@ -66,22 +68,6 @@ I'm a final semester undergraduate student with a keen interest in open-source p
 //     - Ranked *195#super[th]* amongst 4200+ participants. 
 //     - Scholarship awarded for 3 Years equivalent to *\$13500*.
 // ]
-
-
-#resume-achievement2[
-BUET CSE Fest CTF 2023][
-  *Champion* among 100+ teams.]
-
-#resume-achievement2[DU Cefalo ITVerse CTF 2023][*4#super[th]* among 60+ teams.]
-
-#resume-achievement2[RITSEC International CTF 2023][*7#super[th]* among 710+ _international_ teams.]
-
-#resume-achievement2[SUST SWE Technovent CTF 2023][*6#super[th]* among 40+ teams.]
-#resume-achievement2[RIOT Flaghunt CTF 2022][*8#super[th]* among 80+ teams.]
- #resume-achievement2[Awarded IUT-OIC Partial Scholarship][
-//  Ranked *195#super[th]* amongst 4200+ participants. \
-Scholarship awarded for 3 Years equivalent to *\$13500*.]
-
 
 
 = Projects
@@ -131,6 +117,25 @@ Developed a viral simulator to model virus spread, incorporating parameters like
 #resume-skill-item("Libraries & Frameworks", ("Astro","React","Tailwind","SFML","ExpressJS","Pandas","Keras"))
 #resume-skill-item("Other Tools", ("Git","Bash","Linux","Docker","Excel","Burp Suite","UML","LaTeX"))
 #resume-skill-item("Database",("Oracle","MySQL","MariaDB"))
+
+
+= Achievements
+
+#resume-achievement2[
+BUET CSE Fest CTF 2023][
+  *Champion* among 100+ teams.]
+
+#resume-achievement2[DU Cefalo ITVerse CTF 2023][*4#super[th]* among 60+ teams.]
+
+#resume-achievement2[RITSEC International CTF 2023][*7#super[th]* among 710+ _international_ teams.]
+
+#resume-achievement2[SUST SWE Technovent CTF 2023][*6#super[th]* among 40+ teams.]
+#resume-achievement2[RIOT Flaghunt CTF 2022][*8#super[th]* among 80+ teams.]
+ #resume-achievement2[Awarded IUT-OIC Partial Scholarship][
+//  Ranked *195#super[th]* amongst 4200+ participants. \
+Scholarship awarded for 3 Years equivalent to *\$13500*.]
+
+#v(0.85pt)
 
 = Co-Curriculars
 #resume-cocurr[
