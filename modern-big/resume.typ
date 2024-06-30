@@ -171,5 +171,8 @@ I'm a recent graduate with a passion for technology and a strong interest in ope
 // Scholarship awarded for 3 Years equivalent to *\$13500*.]
 
 = Reference
-#resume-ref("Dr. Md Moniruzzaman","Assistant Professor","milton@iut-dhaka.edu")
-#resume-ref("Imtiaj Ahmed Chowdhury","Lecturer","imtiajahmed@iut-dhaka.edu")
+// #resume-ref-iut("Dr. Md Moniruzzaman","Assistant Professor","milton@iut-dhaka.edu")
+// #resume-ref-iut("Imtiaj Ahmed Chowdhury","Lecturer","imtiajahmed@iut-dhaka.edu")
+
+#resume-ref("Dr. Md Moniruzzaman","Assistant Professor",[Computer Science and Engineering Department\ Islamic University and Technology],"+8801618054411","milton@iut-dhaka.edu")
+#resume-ref("Imtiaj Ahmed Chowdhury","Lecturer",[Computer Science and Engineering Department\ Islamic University and Technology],"+8801838929161","imtiajahmed@iut-dhaka.edu")

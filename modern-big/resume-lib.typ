@@ -286,12 +286,11 @@
   ]
 }
 
-#let resume-ref(name,position,mail)={
+#let resume-ref-iut(name,position,mail)={
   resume-entry(
   title: name,
   location: [
     #link("mailto:"+mail)[#box(height:markerf,fa-envelope(fill:color-lightgray)) #mail]
-    // #link("+8801618054411")
   ],
   date: "",
   description:[
@@ -301,4 +300,42 @@
     Islamic University of Technology
   ]
 )
+}
+
+#let resume-ref(
+  name,
+  position,
+  PoE,  // PoE - Place of Employment
+  phone,
+  mail
+) = {
+  v(-2*padf)
+  table(
+    columns: 2,
+    // inset: (0pt,5pt), // same as below
+    inset:(
+      x:0pt,
+      y:5pt,
+    ),
+    stroke: none,
+    column-gutter:  1fr,
+    align:(left,right),
+    [== #name],
+    [
+      #tertiary-right-header([
+      	#set text(fill:default-accent-color)
+        #box[#fa-phone(fill:color-lightgray) #link("tel:" + phone)[#phone]]
+      ])
+    ],
+    [ 
+      #text(color-lightgray,size: h3f, weight: "bold")[#position]\
+      #text(color-lightgray,size: h3f, weight: "bold")[#PoE]
+    ],
+    [#if mail!="" {
+      tertiary-right-header([
+      	#set text(fill:default-accent-color)
+        #box[#fa-envelope(fill:color-lightgray) #link("mailto:" + mail)[#mail]]
+      ])
+    }]
+  )
 }
