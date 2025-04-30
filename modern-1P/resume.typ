@@ -26,7 +26,7 @@ I'm a recent graduate with a passion for technology and a strong interest in ope
 #resume-entry(
   title: "Islamic University of Technology",
   location: "B.Sc in Computer Science & Engineering",
-  date: "Jan 2020 - Present",
+  date: "Jan 2020 - Jun 2024",
   description: "CGPA: "+text(fill:color-darkgray)[3.77]+" out of 4.00"  // | Position: "+text(fill:color-darkgray)[19#super("th")]
 )
 #resume-entry(
