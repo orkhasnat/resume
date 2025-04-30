@@ -45,7 +45,7 @@
   date: "July 2024 - Present",
   description: [
     - Worked in the Business Intelligence team.
-    - Tested data pipelines and visual analytics using enterprise BI tools similar to Power BI.
+    - Manually tested data pipelines and visual analytics using enterprise BI tools similar to Power BI.
     - Used Cypress to scrape data for BI dashboards and reports.
     - Performed UI and regression testing with Playwright.
     - Parallelized CI/CD automation testing pipelines using Jenkins.
