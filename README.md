@@ -7,6 +7,7 @@ Currently I have these CVs:
  - Modern CV 1 Page
  - Modern CV 2 Page Large Size
  - Basic Cover Letter
+ - SQA CV for Year 1 & 1 Page
 
  > *N.B*
  > 
