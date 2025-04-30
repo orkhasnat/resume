@@ -2,15 +2,15 @@
 
 // font sizes
 #let bf = 8pt
-#let h1f = bf+4pt
-#let h2f = bf+2pt
-#let h2secf = bf+1pt
+#let h1f = bf + 4pt
+#let h2f = bf + 2pt
+#let h2secf = bf + 1pt
 #let h3f = bf - 1pt
 
 #let markerf = 7pt
 #let sepf = markerf - 2pt
 #let padf = 2pt
-#let spf= 1em
+#let spf = 1em
 
 // const color
 // #let color-darknight = rgb("131A28")
@@ -30,16 +30,16 @@
 
 // layout utility
 #let __justify_align(left_body, right_body) = {
-  set text(fill:color-lightgray )
-  block[
-    #left_body
-    #box(width: 1fr)[
-      #align(right)[
-        #right_body
-      ]
-    ]
-  ]
+  set text(fill: color-lightgray)
+  table(
+    columns: 2,
+    column-gutter: 1fr,
+    inset: 0%,
+    stroke: none,
+    [ #left_body ], [ #right_body],
+  )
 }
+
 
 #let __justify_align_3(left_body, mid_body, right_body) = {
   block[
@@ -63,7 +63,7 @@
 
 #let github-link(github_path) = {
   set box(height: 11pt)
-  
+
   align(right + horizon)[
     #fa-icon("github", fill: color-darkgray) #link("https://github.com/" + github_path, github_path)
   ]
@@ -80,7 +80,7 @@
 }
 
 #let justified-header(primary, secondary) = {
-  set block(above: spf*0, below: spf*0.5)
+  set block(above: spf * 0, below: spf * 0.5)
   pad[
     #__justify_align[
       == #primary
@@ -91,33 +91,34 @@
 }
 
 #let secondary-justified-header(primary, secondary) = {
-    __justify_align[
-      === #primary
-    ][
-      #tertiary-right-header[#secondary]
-    ]
+  __justify_align[
+    === #primary
+  ][
+    #tertiary-right-header[#secondary]
+  ]
 }
 /// --- End of Helpers
 
 /// ---- Resume Template ----
 
 #let resume(
-  author: (:), 
-  // date: datetime.today().display("[month repr:long] [day], [year]"), 
-  accent_color: default-accent-color, 
-  body) = {
+  author: (:),
+  // date: datetime.today().display("[month repr:long] [day], [year]"),
+  accent_color: default-accent-color,
+  body,
+) = {
   set document(
-    author: author.firstname + " " + author.lastname, 
+    author: author.firstname + " " + author.lastname,
     title: "resume",
   )
-  
+
   set text(
-    font: ("Atkinson Hyperlegible"),
+    font: "Atkinson Hyperlegible",
     lang: "en",
     size: bf,
     fill: color-darkgray,
     hyphenate: false,
-    fallback: true
+    fallback: true,
   )
 
   set page(
@@ -140,25 +141,25 @@
     // ],
     footer-descent: 0pt,
   )
-  
+
   // set paragraph spacing
-  set par(justify: true,spacing: spf*0.75)
+  set par(justify: true, spacing: spf * 0.75)
 
   set heading(
     numbering: none,
     outlined: false,
   )
-  
-  show heading.where(level:1): it => [
+
+  show heading.where(level: 1): it => [
     #set block(above: spf, below: spf)
     #set text(
       size: h1f,
-      weight: "regular"
+      weight: "regular",
     )
-    #align(left)[   
-    // Simple Design
-      #text(fill:default-accent-color)[#strong[#it.body]]
-    // Fancy Deesign
+    #align(left)[
+      // Simple Design
+      #text(fill: default-accent-color)[#strong[#it.body]]
+      // Fancy Deesign
       // #text[#strong[#text(accent_color)[#it.body.text.slice(0, 3)]]]#strong[#text[#it.body.text.slice(3)]]
       #box(width: 1fr, line(length: 100%))
     ]
@@ -173,12 +174,12 @@
     set text(size: h3f, weight: "bold")
     smallcaps[#it.body]
   }
-  
+
   let name = {
     align(center)[
       #pad(bottom: sepf)[
         #block[
-          #set text(size: 32pt, style: "normal", font: ("FreeSerif"))
+          #set text(size: 32pt, style: "normal", font: "FreeSerif")
           #text(accent_color, weight: "regular")[#author.firstname]
           #text(weight: "bold")[#author.lastname]
         ]
@@ -190,13 +191,11 @@
     set text(
       accent_color,
       size: h2secf,
-      weight: "regular"
+      weight: "regular",
     )
     align(center)[
       #smallcaps[
-        #author.positions.join(
-          text[#"  "#sym.dot.c#"  "]
-        )
+        #author.positions.join(text[#"  "#sym.dot.c#"  "])
       ]
     ]
   }
@@ -214,7 +213,7 @@
 
   let contacts = {
     set box(height: markerf)
-    
+
     let separator = box(width: sepf)
 
     align(center)[
@@ -223,7 +222,7 @@
         #align(horizon)[
           #phone-icon
           // #box[#text(author.phone)]
-          #box[#link("tel:"+author.phone)[#author.phone]]
+          #box[#link("tel:" + author.phone)[#author.phone]]
           #separator
           #email-icon
           #box[#link("mailto:" + author.email)[#author.email]]
@@ -237,7 +236,7 @@
           ]
         ]
       ]
-    ] 
+    ]
   }
 
   name
@@ -248,15 +247,15 @@
 
 #let resume-item(body) = {
   set text(size: bf, style: "normal", weight: "light")
-  set par(leading: spf*0.65)
+  set par(leading: spf * 0.65)
   body
 }
 
 #let resume-entry(
-  title: none, 
-  location: "", 
+  title: none,
+  location: "",
   date: "",
-  description: ""
+  description: "",
 ) = {
   pad[
     #justified-header(title, location)
@@ -265,9 +264,9 @@
 }
 
 #let resume-skill-item(category, items) = {
-  set block(below: spf*0.45)
+  set block(below: spf * 0.45)
   set pad(top: padf)
-  
+
   pad[
     #grid(
       columns: (25fr, 70fr),
@@ -277,7 +276,7 @@
         == #category
       ],
       align(left)[
-        #set text(size: h2secf, style: "normal", weight: "light",fill:default-accent-color,)
+        #set text(size: h2secf, style: "normal", weight: "light", fill: default-accent-color)
         #items.join(",  ")
       ],
     )
@@ -290,43 +289,43 @@
 #let resume-achievement(body) = {
   // let t = text.with(weight:"black")
   set list(
-  tight:true,
-  marker: ([#box(height:markerf,fa-trophy(fill:color-lightgray))],[])
+    tight: true,
+    marker: ([#box(height: markerf, fa-trophy(fill: color-lightgray))], []),
   )
   body
 }
-#let resume-achievement2(title,rank) = {
-    __justify_align[
-      === #fa-trophy(fill:color-lightgray) #text(fill:color-darkgray,weight:"black")[#title]
-    ][
-      #tertiary-right-header[
-        #text(fill:default-accent-color)[#rank]
-      ]
+#let resume-achievement2(title, rank) = {
+  __justify_align[
+    === #fa-trophy(fill: color-lightgray) #text(fill: color-darkgray, weight: "black")[#title]
+  ][
+    #tertiary-right-header[
+      #text(fill: default-accent-color)[#rank]
     ]
+  ]
   // secondary-justified-header(fa-trophy()+title,rank)
 }
 
 #let resume-cocurr(body) = {
   set list(
-  tight:true,
-  marker: [#box(height:markerf,fa-award(fill:color-lightgray))]
+    tight: true,
+    marker: [#box(height: markerf, fa-award(fill: color-lightgray))],
   )
   body
 }
 #let resume-project(
-  title: none, 
-  location: "", 
-  stack:""
+  title: none,
+  location: "",
+  stack: "",
 ) = {
   pad[
     #justified-header(title, location)
-    #set text(fill:color-lightgray,weight:"bold")
+    #set text(fill: color-lightgray, weight: "bold")
     #set list(
       tight: true,
-      marker:[#box(height:markerf,fa-code(fill:default-accent-color))],
+      marker: [#box(height: markerf, fa-code(fill: default-accent-color))],
       indent: padf,
-      body-indent: spf*0.5
-      )
+      body-indent: spf * 0.5,
+    )
     - #stack
   ]
 }
