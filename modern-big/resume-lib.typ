@@ -19,8 +19,8 @@
 #let color-lightgray = rgb("415161")
 
 // const icons
-#let linkedin-icon = box(fa-icon("linkedin", fa-set: "Brands", fill: color-darknight))
-#let github-icon = box(fa-icon("github", fa-set: "Brands", fill: color-darknight))
+#let linkedin-icon = box(fa-icon("linkedin", fill: color-darknight))
+#let github-icon = box(fa-icon("github", fill: color-darknight))
 #let phone-icon = box(fa-phone(fill: color-darknight))
 #let email-icon = box(fa-icon("at", fill: color-darknight))
 
@@ -62,7 +62,7 @@
   set box(height: 11pt)
   
   align(right + horizon)[
-    #fa-icon("github", fa-set: "Brands", fill: color-darkgray) #link("https://github.com/" + github_path, github_path)
+    #fa-icon("github", fill: color-darkgray) #link("https://github.com/" + github_path, github_path)
   ]
 }
 
@@ -121,8 +121,7 @@
   )
   
   // set paragraph spacing
-  show par: set block(above: spf, below: spf)
-  set par(justify: true,linebreaks: "optimized")
+  set par(justify: true,linebreaks: "optimized",spacing: spf)
 
   set heading(
     numbering: none,
@@ -157,7 +156,7 @@
   let name = {
     align(center)[
         #block[
-          #set text(size: 32pt, style: "normal", font: ("Free Serif"))
+          #set text(size: 32pt, style: "normal", font: ("FreeSerif"))
           #text(accent_color, weight: "regular")[#author.firstname]
           #text(weight: "bold")[#author.lastname]
         ]
