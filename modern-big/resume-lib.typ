@@ -271,10 +271,10 @@
   // secondary-justified-header(fa-trophy()+title,rank)
 }
 
-#let resume-cocurr(body) = {
+#let resume-list(icon, body) = {
   set list(
     tight: true,
-    marker: [#box(height: markerf, fa-award(fill: color-lightgray))],
+    marker: [#box(height: markerf, icon(fill: color-lightgray))],
   )
   body
 }

@@ -129,7 +129,7 @@
 
 = Co-Curriculars
 // #v(padf * 4)
-#resume-cocurr[
+#resume-list(fa-award())[
   - Member of #link("https://ctftime.org/team/175924")[_IUT Genesis_], team ranked #text(weight: "bold")[1#super("st")] in #link("https://ctftime.org/stats/2023/BD")[_CTFtime_] in Bangladesh (2023).
   - Organizer and Problem Setter of IUT 11#super("th") National ICT Fest 2024.
   - Problem Setter at KnightCTF 2023.
